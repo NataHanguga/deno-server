@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(morgan('dev'))
 app.use(cors())
 
-app.use('/', (req, res) => res.send(`<div>Hello</div>`))
+app.use('/', (req, res) => res.end(`<div>Hello</div>`))
 app.use('/rate', rate);
 app.use('/manager-position', managerPosition);
 app.use('/employee-position', employeePosition);
