@@ -12,7 +12,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(morgan('dev'))
+// app.use(morgan('dev'))
 app.use(cors())
 
 app.use('/', (req, res) => res.send(`<div>Hello</div>`))
