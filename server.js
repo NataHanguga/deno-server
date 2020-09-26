@@ -14,11 +14,8 @@
 //   });
 
 const app = require('./app');
-const http = require('http')
 const port = process.env.PORT || 3000;
-// http.createServer(() => {
-//   console.log(`Express is running on port ${port}`)
-// }).listen(port)
-const server = app.listen(process.env.PORT || 3000, () => {
+
+const server = app.listen(port, () => {
   console.log(`Express is running on port ${server.address().port}`);
 });
