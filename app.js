@@ -6,7 +6,6 @@ const cors = require('cors')
 
 const managerPosition = require('./routes/manager-position');
 const employeePosition = require('./routes/employee-position')
-// const pedagogicTitle = require('./routes/pedagogic-title')
 const teacher = require('./routes/teacher')
 
 const app = express();
