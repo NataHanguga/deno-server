@@ -1,9 +1,9 @@
 const express = require('express');
-const rate = require('./routes/rate');
 const bodyParser = require('body-parser');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const cors = require('cors')
 
+// const rate = require('./routes/rate');
 // const managerPosition = require('./routes/manager-position');
 // const employeePosition = require('./routes/employee-position')
 // const teacher = require('./routes/teacher')
