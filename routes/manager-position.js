@@ -48,8 +48,8 @@ router
 
     try {
       const existPosition = await ManagerPosition.findById(req.params.id);
-
-      if (!existPosition.length) {
+      
+      if (!existPosition) {
         throw new Error('can not find this position')
       }
 
@@ -63,12 +63,23 @@ router
       res.status(400).json(error);
     }
   })
-// .delete('/:id', async (req, res) => {
-//   await ManagerPosition.findOneAndDelete(
-//     { _id: req.params.id },
-//     (err, result) => {
-//       res.send(result)
-//     })
-// });
+  .delete('/:id', async (req, res) => {
+
+    try {
+      const existPosition = await ManagerPosition.findById(req.params.id);
+console.log(existPosition);
+
+      if (!existPosition) {
+        throw new Error('can not find this position')
+      }
+
+      const result = existPosition.delete();
+      res.json(positionFormatting(result))
+    } catch (error) {
+      console.log(error);
+      
+      res.status(400).json(error);
+    }
+  });
 
 module.exports = router;
