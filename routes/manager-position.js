@@ -67,7 +67,6 @@ router
 
     try {
       const existPosition = await ManagerPosition.findById(req.params.id);
-console.log(existPosition);
 
       if (!existPosition) {
         throw new Error('can not find this position')
@@ -76,8 +75,6 @@ console.log(existPosition);
       const result = existPosition.delete();
       res.json(positionFormatting(result))
     } catch (error) {
-      console.log(error);
-      
       res.status(400).json(error);
     }
   });

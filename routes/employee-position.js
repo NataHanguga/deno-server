@@ -48,7 +48,8 @@ router
 
     try {
       const existPosition = await EmployeePosition.findById(req.params.id);
-
+      console.log(existPosition);
+      
       if (!existPosition) {
         throw new Error('can not find this position')
       }
